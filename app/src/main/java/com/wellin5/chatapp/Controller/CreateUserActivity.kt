@@ -1,9 +1,11 @@
-package com.wellin5.chatapp
+package com.wellin5.chatapp.Controller
 
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.wellin5.chatapp.R
+import com.wellin5.chatapp.Services.AuthService
 import kotlinx.android.synthetic.main.activity_create_user.*
 import java.util.*
 
@@ -51,6 +53,10 @@ class CreateUserActivity : AppCompatActivity() {
     }
 
     fun clickCreateUser (view: View) {
+        AuthService.registerUser(this, "t@t.com", "password") { complete ->
+            if(complete){
 
+            }
+        }
     }
 }
