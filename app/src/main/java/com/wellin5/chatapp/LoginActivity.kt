@@ -2,6 +2,7 @@ package com.wellin5.chatapp
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 
 class LoginActivity : AppCompatActivity() {
 
@@ -9,4 +10,14 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
     }
+
+    fun clickLoginButton (view: View){
+
+    }
+
+    fun clickLoginCreateUser (view: View){
+
+    }
+
+
 }
