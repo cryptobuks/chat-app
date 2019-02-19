@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickSendMessage (view: View) {
-        
+
     }
 
 }
