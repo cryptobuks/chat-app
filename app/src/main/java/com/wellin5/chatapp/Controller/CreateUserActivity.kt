@@ -1,13 +1,16 @@
 package com.wellin5.chatapp.Controller
 
+import android.content.Intent
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.content.LocalBroadcastManager
 import android.view.View
 import android.widget.Toast
 import com.wellin5.chatapp.R
 import com.wellin5.chatapp.Services.AuthService
 import com.wellin5.chatapp.Services.UserDataService
+import com.wellin5.chatapp.Utilities.BROADCAST_USER_DATA_CHANGE
 import kotlinx.android.synthetic.main.activity_create_user.*
 import kotlinx.android.synthetic.main.activity_login.*
 import java.util.*
@@ -72,6 +75,9 @@ class CreateUserActivity : AppCompatActivity() {
                         if (loginSuccess) {
                             AuthService.createUser(this, username, email, userAvatar, avatarColor) { createSuccess ->
                                 if (createSuccess) {
+                                    // sending info about successful user login
+                                    val userDataChange = Intent(BROADCAST_USER_DATA_CHANGE)
+                                    LocalBroadcastManager.getInstance(this).sendBroadcast(userDataChange);
                                     enableSpinner(false)
                                     finish()
                                 } else {
