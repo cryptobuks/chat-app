@@ -7,6 +7,7 @@ import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
 import com.wellin5.chatapp.Controller.App
 import com.wellin5.chatapp.Model.Channel
+import com.wellin5.chatapp.Model.Message
 import com.wellin5.chatapp.Utilities.URL_GET_CHANNELS
 import org.json.JSONArray
 import org.json.JSONException
@@ -14,6 +15,7 @@ import org.json.JSONException
 object MessageService {
 
     val channels = ArrayList<Channel>()
+    val messages = ArrayList<Message>()
 
     fun getChannels(complete: (Boolean) -> Unit) {
         val channelsRequest = object : JsonArrayRequest(URL_GET_CHANNELS, Response.Listener<JSONArray> { response ->
